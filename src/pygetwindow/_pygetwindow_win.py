@@ -172,6 +172,12 @@ def getAllWindows():
 
     return windowObjs
 
+def getConsoleWindow():
+    """Returns the handle of the console window
+    """
+    whnd = ctypes.windll.kernel32.GetConsoleWindow()
+    return whnd
+
 
 class Win32Window(BaseWindow):
     def __init__(self, hWnd):
