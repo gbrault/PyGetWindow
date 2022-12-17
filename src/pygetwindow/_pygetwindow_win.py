@@ -304,11 +304,8 @@ class Win32Window(BaseWindow):
         return isWindowVisible(self._hWnd)
 
 class Win32ConsoleWindow(Win32Window)
-    def getConsoleWindow(self):
-        """Returns the handle of the console window
-        """
-        self._hWnd = ctypes.windll.kernel32.GetConsoleWindow()
-
+    def __init__(self):
+        super().__init__(ctypes.windll.kernel32.GetConsoleWindow())
 
 def cursor():
     """Returns the current xy coordinates of the mouse cursor as a two-integer
