@@ -340,7 +340,7 @@ elif sys.platform == "win32":
         getWindowsWithTitle,
         getAllWindows,
         getAllTitles,
-        getConsoleWindow,
+        Win32ConsoleWindow,
     )
 
     Window = Win32Window
