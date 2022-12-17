@@ -172,13 +172,6 @@ def getAllWindows():
 
     return windowObjs
 
-def getConsoleWindow():
-    """Returns the handle of the console window
-    """
-    whnd = ctypes.windll.kernel32.GetConsoleWindow()
-    return whnd
-
-
 class Win32Window(BaseWindow):
     def __init__(self, hWnd):
         self._hWnd = hWnd # TODO fix this, this is a LP_c_long insead of an int.
@@ -309,6 +302,12 @@ class Win32Window(BaseWindow):
     def visible(self):
         """Return ``True`` if the window is currently visible."""
         return isWindowVisible(self._hWnd)
+
+class Win32ConsoleWindow(Win32Window)
+    def getConsoleWindow(self):
+        """Returns the handle of the console window
+        """
+        self._hWnd = ctypes.windll.kernel32.GetConsoleWindow()
 
 
 def cursor():
