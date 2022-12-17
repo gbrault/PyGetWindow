@@ -17,7 +17,7 @@
 # get/click menu (win32: GetMenuItemCount, GetMenuItemInfo, GetMenuItemID, GetMenu, GetMenuItemRect)
 
 
-__version__ = "0.0.10"
+__version__ = "0.0.10a"
 
 import sys, collections, pyrect
 
