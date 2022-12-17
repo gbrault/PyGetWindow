@@ -303,7 +303,7 @@ class Win32Window(BaseWindow):
         """Return ``True`` if the window is currently visible."""
         return isWindowVisible(self._hWnd)
 
-class Win32ConsoleWindow(Win32Window)
+class Win32ConsoleWindow(Win32Window):
     def __init__(self):
         super().__init__(ctypes.windll.kernel32.GetConsoleWindow())
 
